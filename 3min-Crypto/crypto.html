@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poga Finance | Platforma e Kriptomonedhave</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="crypto.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="gradient-bg"></div>
+    <div class="noise-overlay"></div>
+    <div class="particles-container" id="particles"></div>
+    
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-chart-network"></i>
+                    </div>
+                    <div>
+                        <h1>POGA<span class="finance-text">FINANCE</span></h1>
+                        <p class="tagline">Inteligjenca financiare e brezit të ri</p>
+                    </div>
+                </div>
+                
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="#" class="nav-link active"><i class="fas fa-home"></i> Kryefaqja</a></li>
+                        <li><a href="#" class="nav-link"><i class="fas fa-coins"></i> Kriptomonedha</a></li>
+                        <li><a href="#" class="nav-link"><i class="fas fa-chart-line"></i> Analiza</a></li>
+                        <li><a href="#" class="nav-link"><i class="fas fa-wallet"></i> Portofoli</a></li>
+                        <li><a href="#" class="nav-link"><i class="fas fa-newspaper"></i> Lajme</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="user-actions">
+                    <button class="btn btn-outline">
+                        <i class="fas fa-user-plus"></i> Regjistrohu
+                    </button>
+                    <button class="btn btn-primary">
+                        <i class="fas fa-sign-in-alt"></i> Hyr
+                    </button>
+                    <div class="theme-toggle">
+                        <i class="fas fa-moon" id="theme-icon"></i>
+                    </div>
+                </div>
+                
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2 class="hero-title">Ndjekja <span class="gradient-text">Inteligjente</span> e Kriptomonedhave</h2>
+                    <p class="hero-subtitle">Platforma e parë shqiptare për analizën e tregut të kriptomonedhave. Monitoro, krahason dhe investo me informacion në kohë reale.</p>
+                    <div class="hero-actions">
+                        <button class="btn btn-primary btn-large">
+                            <i class="fas fa-rocket"></i> Fillo Tani
+                        </button>
+                        <button class="btn btn-outline btn-large">
+                            <i class="fas fa-play-circle"></i> Shiko Video
+                        </button>
+                    </div>
+                    
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <h3>50+</h3>
+                            <p>Kriptomonedha</p>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat">
+                            <h3>24/7</h3>
+                            <p>Monitorim</p>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat">
+                            <h3>0.5s</h3>
+                            <p>Përditësim</p>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat">
+                            <h3>100%</h3>
+                            <p>E Sigurt</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="crypto-card">
+                        <div class="card-header">
+                            <div class="crypto-icon">
+                                <i class="fab fa-bitcoin"></i>
+                            </div>
+                            <div>
+                                <h4>Bitcoin</h4>
+                                <p>BTC/USD</p>
+                            </div>
+                            <div class="price-change positive">
+                                <i class="fas fa-arrow-up"></i> 3.45%
+                            </div>
+                        </div>
+                        <div class="card-price">$42,567.89</div>
+                        <div class="card-chart" id="btc-chart"></div>
+                    </div>
+                    
+                    <div class="crypto-card ethereum">
+                        <div class="card-header">
+                            <div class="crypto-icon">
+                                <i class="fab fa-ethereum"></i>
+                            </div>
+                            <div>
+                                <h4>Ethereum</h4>
+                                <p>ETH/USD</p>
+                            </div>
+                            <div class="price-change positive">
+                                <i class="fas fa-arrow-up"></i> 1.89%
+                            </div>
+                        </div>
+                        <div class="card-price">$2,345.67</div>
+                        <div class="card-chart" id="eth-chart"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="market-overview">
+        <div class="container">
+            <div class="section-header">
+                <h2>Tregu i <span class="gradient-text">Kriptomonedhave</span></h2>
+                <p>Monitoro performancën e aktiveve kryesore në kohë reale</p>
+            </div>
+            
+            <div class="market-filters">
+                <button class="filter-btn active">Të Gjitha</button>
+                <button class="filter-btn">Top 10</button>
+                <button class="filter-btn">DeFi</button>
+                <button class="filter-btn">NFT</button>
+                <button class="filter-btn">Gamifi</button>
+            </div>
+            
+            <div class="crypto-table-container">
+                <table class="crypto-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Emri</th>
+                            <th>Çmimi</th>
+                            <th>Ndryshimi (24h)</th>
+                            <th>Kapitalizimi i Tregut</th>
+                            <th>Vëllimi (24h)</th>
+                            <th>Grafiku (7d)</th>
+                            <th>Veprimi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="crypto-table-body">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    
+    <section class="portfolio-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Simulator <span class="gradient-text">Portofoli</span></h2>
+                <p>Menaxho portofolin tënd virtual dhe shiko performancën e investimeve</p>
+            </div>
+            
+            <div class="portfolio-content">
+                <div class="portfolio-stats">
+                    <div class="portfolio-card">
+                        <div class="portfolio-header">
+                            <h3>Portofoli Yt</h3>
+                            <span class="portfolio-change positive">+12.45%</span>
+                        </div>
+                        <div class="portfolio-value">$18,542.36</div>
+                        <div class="portfolio-breakdown">
+                            <div class="breakdown-item">
+                                <div class="breakdown-label">
+                                    <span class="breakdown-color" style="background-color: #f7931a;"></span>
+                                    Bitcoin
+                                </div>
+                                <div class="breakdown-percent">42%</div>
+                            </div>
+                            <div class="breakdown-item">
+                                <div class="breakdown-label">
+                                    <span class="breakdown-color" style="background-color: #627eea;"></span>
+                                    Ethereum
+                                </div>
+                                <div class="breakdown-percent">28%</div>
+                            </div>
+                            <div class="breakdown-item">
+                                <div class="breakdown-label">
+                                    <span class="breakdown-color" style="background-color: #00d395;"></span>
+                                    Cardano
+                                </div>
+                                <div class="breakdown-percent">15%</div>
+                            </div>
+                            <div class="breakdown-item">
+                                <div class="breakdown-label">
+                                    <span class="breakdown-color" style="background-color: #f0b90b;"></span>
+                                    BNB
+                                </div>
+                                <div class="breakdown-percent">10%</div>
+                            </div>
+                            <div class="breakdown-item">
+                                <div class="breakdown-label">
+                                    <span class="breakdown-color" style="background-color: #5d9df5;"></span>
+                                    Të Tjerë
+                                </div>
+                                <div class="breakdown-percent">5%</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-actions">
+                        <button class="btn btn-primary btn-block" id="add-asset-btn">
+                            <i class="fas fa-plus-circle"></i> Shto Asete
+                        </button>
+                        <button class="btn btn-outline btn-block" id="swap-btn">
+                            <i class="fas fa-exchange-alt"></i> Këmbim
+                        </button>
+                        <button class="btn btn-outline btn-block" id="analyze-btn">
+                            <i class="fas fa-chart-pie"></i> Analizë
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="portfolio-chart-container">
+                    <div class="chart-header">
+                        <h3>Performanca e Portofolit (30 ditë)</h3>
+                        <div class="chart-period">
+                            <button class="period-btn active">7D</button>
+                            <button class="period-btn">30D</button>
+                            <button class="period-btn">90D</button>
+                            <button class="period-btn">1V</button>
+                        </div>
+                    </div>
+                    <div class="portfolio-chart" id="portfolio-chart"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="wallet-section">
+        <div class="container">
+            <div class="section-header">
+                <h2><span class="gradient-text">Wallet</span> Im</h2>
+                <p>Menaxho balancën dhe kryej operacione me kriptomonedha</p>
+            </div>
+            
+            <div class="wallet-content">
+                <div class="wallet-card">
+                    <div class="wallet-header">
+                        <h3>Balanca e Walletit</h3>
+                        <div class="wallet-actions">
+                            <button class="btn btn-outline btn-small" id="deposit-btn">
+                                <i class="fas fa-plus-circle"></i> Depozito
+                            </button>
+                            <button class="btn btn-outline btn-small" id="withdraw-btn">
+                                <i class="fas fa-minus-circle"></i> Tërheq
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="wallet-balance">
+                        <div class="balance-amount">$5,250.75</div>
+                        <div class="balance-change positive">+$245.50 (4.9%)</div>
+                    </div>
+                    
+                    <div class="wallet-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Gjendja e Lirë:</span>
+                            <span class="detail-value">$3,150.45</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Investuar:</span>
+                            <span class="detail-value">$2,100.30</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Fitimi Total:</span>
+                            <span class="detail-value positive">$450.25</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="transaction-card">
+                    <div class="transaction-header">
+                        <h3>Operacione të Fundit</h3>
+                        <button class="btn btn-outline btn-small" id="view-all-btn">
+                            Shiko të Gjitha
+                        </button>
+                    </div>
+                    
+                    <div class="transactions-list" id="transactions-list">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="trade-section">
+        <div class="container">
+            <div class="section-header">
+                <h2><span class="gradient-text">Shit/Blej</span> Kriptomonedha</h2>
+                <p>Kryej operacione në kohë reale me kriptomonedha</p>
+            </div>
+            
+            <div class="trade-content">
+                <div class="trade-form-container">
+                    <div class="trade-tabs">
+                        <button class="trade-tab active" data-type="buy">Blej</button>
+                        <button class="trade-tab" data-type="sell">Shit</button>
+                    </div>
+                    
+                    <div class="trade-form">
+                        <div class="form-group">
+                            <label for="trade-crypto">Zgjidh Kriptomonedhën:</label>
+                            <select id="trade-crypto">
+                                <option value="BTC">Bitcoin (BTC)</option>
+                                <option value="ETH">Ethereum (ETH)</option>
+                                <option value="ADA">Cardano (ADA)</option>
+                                <option value="BNB">BNB (BNB)</option>
+                                <option value="SOL">Solana (SOL)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="trade-amount">Sasia:</label>
+                            <div class="input-with-buttons">
+                                <input type="number" id="trade-amount" placeholder="0.00" step="0.0001" min="0">
+                                <div class="amount-buttons">
+                                    <button type="button" class="amount-btn" data-percent="25">25%</button>
+                                    <button type="button" class="amount-btn" data-percent="50">50%</button>
+                                    <button type="button" class="amount-btn" data-percent="75">75%</button>
+                                    <button type="button" class="amount-btn" data-percent="100">100%</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="price-info">
+                            <div class="price-item">
+                                <span>Çmimi Aktual:</span>
+                                <span id="current-price">$42,567.89</span>
+                            </div>
+                            <div class="price-item">
+                                <span>Vlera Total:</span>
+                                <span id="total-value">$0.00</span>
+                            </div>
+                            <div class="price-item">
+                                <span>Komisioni:</span>
+                                <span id="trade-fee">$0.00 (0.1%)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="trade-summary">
+                            <div class="summary-item">
+                                <span>Do të paguash:</span>
+                                <span id="total-cost">$0.00</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>Do të marrësh:</span>
+                                <span id="total-receive">0.00000000 BTC</span>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-primary btn-block" id="execute-trade-btn">
+                            <i class="fas fa-exchange-alt"></i> Ekzekuto Blerjen
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="trade-info">
+                    <div class="info-card">
+                        <h3>Informacion i Shpejtë</h3>
+                        <div class="info-list">
+                            <div class="info-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <h4>Shpejtësi e Lartë</h4>
+                                    <p>Operacionet ekzekutohen në 0.5 sekonda</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-percentage"></i>
+                                <div>
+                                    <h4>Komision i Ulet</h4>
+                                    <p>Vetëm 0.1% për çdo transaksion</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <div>
+                                    <h4>Siguri e Plotë</h4>
+                                    <p>Transaksione të enkriptuara dhe të sigurta</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-history"></i>
+                                <div>
+                                    <h4>Histori e Plotë</h4>
+                                    <p>Ruaj të gjitha operacionet e tua</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="news-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Lajmet e <span class="gradient-text">Fundit</span></h2>
+                <p>Qëndro i informuar me zhvillimet më të fundit nga bota e kriptomonedhave</p>
+            </div>
+            
+            <div class="news-grid" id="news-grid">
+            </div>
+        </div>
+    </section>
+    
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Pse <span class="gradient-text">Poga Finance</span>?</h2>
+                <p>Karakteristikat unike që na bëjnë të dallohemi</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Shpejtësi Reale</h3>
+                    <p>Të dhënat përditësohen çdo 0.5 sekonda, duke të mbajtur gjithmonë të informuar.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Siguri Maksimale</h3>
+                    <p>Teknologji e avancuar për mbrojtjen e të dhënave të përdoruesve.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-network"></i>
+                    </div>
+                    <h3>Analiza e Thelluar</h3>
+                    <p>Mjete të avancuara për analizën e tregut dhe parashikimin e trendeve.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI Integruar</h3>
+                    <p>Inteligjenca artificiale për rekomandime të personalizuara të investimeve.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-chart-network"></i>
+                        </div>
+                        <div>
+                            <h1>POGA<span class="finance-text">FINANCE</span></h1>
+                            <p class="tagline">Inteligjenca financiare e brezit të ri</p>
+                        </div>
+                    </div>
+                    <p class="footer-description">Platforma e parë shqiptare për ndjekjen dhe analizën e tregut të kriptomonedhave.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Platforma</h4>
+                        <ul>
+                            <li><a href="#">Kriptomonedha</a></li>
+                            <li><a href="#">Portofoli</a></li>
+                            <li><a href="#">Analiza</a></li>
+                            <li><a href="#">Lajme</a></li>
+                            <li><a href="#">Çmimet</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Kompania</h4>
+                        <ul>
+                            <li><a href="#">Rreth Nesh</a></li>
+                            <li><a href="#">Karriera</a></li>
+                            <li><a href="#">Blogu</a></li>
+                            <li><a href="#">Partnerët</a></li>
+                            <li><a href="#">Kontakti</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Legjislacioni</h4>
+                        <ul>
+                            <li><a href="#">Terma & Kushte</a></li>
+                            <li><a href="#">Politika e Privatësisë</a></li>
+                            <li><a href="#">Cookies</a></li>
+                            <li><a href="#">Regjistrimi</a></li>
+                            <li><a href="#">Ndryshimet</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Poga Finance. Të gjitha të drejtat e rezervuara. Krijuar me pasion nga <strong>Emin Poga</strong>.</p>
+                <div class="footer-badges">
+                    <span class="badge"><i class="fas fa-lock"></i> SSL i Sigurt</span>
+                    <span class="badge"><i class="fas fa-globe"></i> Në Gjuhën Shqipe</span>
+                    <span class="badge"><i class="fas fa-bolt"></i> Shpejtësi e Lartë</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <div class="notification" id="notification">
+        <i class="fas fa-bell"></i>
+        <span id="notification-text">Të dhënat janë përditësuar me sukses!</span>
+    </div>
+    
+    <div class="modal" id="asset-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Shto Asete në Portofol</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Zgjidh Kriptomonedhën:</label>
+                    <select id="crypto-select">
+                        <option value="BTC">Bitcoin (BTC)</option>
+                        <option value="ETH">Ethereum (ETH)</option>
+                        <option value="ADA">Cardano (ADA)</option>
+                        <option value="BNB">BNB (BNB)</option>
+                        <option value="SOL">Solana (SOL)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Sasia:</label>
+                    <input type="number" id="asset-amount" placeholder="0.00" step="0.0001" min="0">
+                </div>
+                <div class="form-group">
+                    <label>Çmimi i Blerjes ($):</label>
+                    <input type="number" id="asset-price" placeholder="0.00" step="0.01" min="0">
+                </div>
+                <div class="form-group">
+                    <label>Data e Blerjes:</label>
+                    <input type="date" id="asset-date">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="modal-cancel">Anulo</button>
+                <button class="btn btn-primary" id="modal-confirm">Shto në Portofol</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal" id="deposit-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Depozito Para</h3>
+                <button class="modal-close deposit-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Shuma për Depozitim ($):</label>
+                    <input type="number" id="deposit-amount" placeholder="0.00" step="0.01" min="10" max="10000">
+                    <small class="hint">Minimumi: $10, Maksimumi: $10,000</small>
+                </div>
+                <div class="form-group">
+                    <label>Metoda e Pagesës:</label>
+                    <select id="payment-method">
+                        <option value="card">Kartë Krediti/Debiti</option>
+                        <option value="bank">Transfertë Bankare</option>
+                        <option value="paypal">PayPal</option>
+                        <option value="crypto">Kriptomonedha</option>
+                    </select>
+                </div>
+                <div class="deposit-methods">
+                    <div class="method-option" data-method="card">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Kartë</span>
+                    </div>
+                    <div class="method-option" data-method="bank">
+                        <i class="fas fa-university"></i>
+                        <span>Bankë</span>
+                    </div>
+                    <div class="method-option" data-method="paypal">
+                        <i class="fab fa-paypal"></i>
+                        <span>PayPal</span>
+                    </div>
+                    <div class="method-option" data-method="crypto">
+                        <i class="fas fa-coins"></i>
+                        <span>Crypto</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="deposit-cancel">Anulo</button>
+                <button class="btn btn-primary" id="deposit-confirm">Depozito</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="withdraw-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Tërheq Para</h3>
+                <button class="modal-close withdraw-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Balanca e Lirë:</label>
+                    <div class="balance-display">$3,150.45</div>
+                </div>
+                <div class="form-group">
+                    <label>Shuma për Tërheqje ($):</label>
+                    <input type="number" id="withdraw-amount" placeholder="0.00" step="0.01" min="20" max="3150.45">
+                    <small class="hint">Minimumi: $20</small>
+                </div>
+                <div class="form-group">
+                    <label>Llogaria Bankare:</label>
+                    <select id="bank-account">
+                        <option value="bank1">Banka Kombëtare Tregtare ****1234</option>
+                        <option value="bank2">Raiffeisen Bank ****5678</option>
+                        <option value="bank3">Credins Bank ****9012</option>
+                    </select>
+                </div>
+                <div class="fee-info">
+                    <span>Komisioni i Tërheqjes:</span>
+                    <span>$1.50 (fiks)</span>
+                </div>
+                <div class="total-info">
+                    <span>Do të të kreditohet:</span>
+                    <span id="withdraw-total">$0.00</span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="withdraw-cancel">Anulo</button>
+                <button class="btn btn-primary" id="withdraw-confirm">Tërheq</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
