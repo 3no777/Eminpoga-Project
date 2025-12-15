@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="gradient-bg"></div>
@@ -39,11 +40,11 @@
                 </nav>
                 
                 <div class="user-actions">
-                    <button class="btn btn-outline">
-                        <i class="fas fa-user-plus"></i> Regjistrohu
+                    <button class="btn btn-outline" id="reset-data-btn">
+                        <i class="fas fa-redo"></i> Reset Data
                     </button>
-                    <button class="btn btn-primary">
-                        <i class="fas fa-sign-in-alt"></i> Hyr
+                    <button class="btn btn-primary" id="export-data-btn">
+                        <i class="fas fa-download"></i> Export Data
                     </button>
                     <div class="theme-toggle">
                         <i class="fas fa-moon" id="theme-icon"></i>
@@ -64,17 +65,17 @@
                     <h2 class="hero-title">Ndjekja <span class="gradient-text">Inteligjente</span> e Kriptomonedhave</h2>
                     <p class="hero-subtitle">Platforma e parë shqiptare për analizën e tregut të kriptomonedhave. Monitoro, krahason dhe investo me informacion në kohë reale.</p>
                     <div class="hero-actions">
-                        <button class="btn btn-primary btn-large">
+                        <button class="btn btn-primary btn-large" id="start-now-btn">
                             <i class="fas fa-rocket"></i> Fillo Tani
                         </button>
-                        <button class="btn btn-outline btn-large">
+                        <button class="btn btn-outline btn-large" id="watch-video-btn">
                             <i class="fas fa-play-circle"></i> Shiko Video
                         </button>
                     </div>
                     
                     <div class="hero-stats">
                         <div class="stat">
-                            <h3>50+</h3>
+                            <h3 id="crypto-count">50+</h3>
                             <p>Kriptomonedha</p>
                         </div>
                         <div class="stat-divider"></div>
@@ -89,7 +90,7 @@
                         </div>
                         <div class="stat-divider"></div>
                         <div class="stat">
-                            <h3>100%</h3>
+                            <h3 id="storage-status">100%</h3>
                             <p>E Sigurt</p>
                         </div>
                     </div>
@@ -110,7 +111,9 @@
                             </div>
                         </div>
                         <div class="card-price">$42,567.89</div>
-                        <div class="card-chart" id="btc-chart"></div>
+                        <div class="card-chart">
+                            <canvas id="btc-chart"></canvas>
+                        </div>
                     </div>
                     
                     <div class="crypto-card ethereum">
@@ -127,7 +130,9 @@
                             </div>
                         </div>
                         <div class="card-price">$2,345.67</div>
-                        <div class="card-chart" id="eth-chart"></div>
+                        <div class="card-chart">
+                            <canvas id="eth-chart"></canvas>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -247,7 +252,9 @@
                             <button class="period-btn">1V</button>
                         </div>
                     </div>
-                    <div class="portfolio-chart" id="portfolio-chart"></div>
+                    <div class="portfolio-chart">
+                        <canvas id="portfolio-chart"></canvas>
+                    </div>
                 </div>
             </div>
         </div>
@@ -282,15 +289,15 @@
                     <div class="wallet-details">
                         <div class="detail-item">
                             <span class="detail-label">Gjendja e Lirë:</span>
-                            <span class="detail-value">$3,150.45</span>
+                            <span class="detail-value" id="free-balance">$3,150.45</span>
                         </div>
                         <div class="detail-item">
                             <span class="detail-label">Investuar:</span>
-                            <span class="detail-value">$2,100.30</span>
+                            <span class="detail-value" id="invested-balance">$2,100.30</span>
                         </div>
                         <div class="detail-item">
                             <span class="detail-label">Fitimi Total:</span>
-                            <span class="detail-value positive">$450.25</span>
+                            <span class="detail-value positive" id="total-profit">$450.25</span>
                         </div>
                     </div>
                 </div>
@@ -410,7 +417,7 @@
                                 <i class="fas fa-history"></i>
                                 <div>
                                     <h4>Histori e Plotë</h4>
-                                    <p>Ruaj të gjitha operacionet e tua</p>
+                                    <p>Ruaj të gjitha operacionet e tua në localStorage</p>
                                 </div>
                             </div>
                         </div>
@@ -453,7 +460,7 @@
                         <i class="fas fa-shield-alt"></i>
                     </div>
                     <h3>Siguri Maksimale</h3>
-                    <p>Teknologji e avancuar për mbrojtjen e të dhënave të përdoruesve.</p>
+                    <p>Teknologji e avancuar për mbrojtjen e të dhënave të përdoruesve në localStorage.</p>
                 </div>
                 
                 <div class="feature-card">
@@ -466,10 +473,10 @@
                 
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-robot"></i>
+                        <i class="fas fa-database"></i>
                     </div>
-                    <h3>AI Integruar</h3>
-                    <p>Inteligjenca artificiale për rekomandime të personalizuara të investimeve.</p>
+                    <h3>Ruajtje Lokale</h3>
+                    <p>Të dhënat tuaja ruhen lokalmente në shfletues me localStorage.</p>
                 </div>
             </div>
         </div>
@@ -488,7 +495,7 @@
                             <p class="tagline">Inteligjenca financiare e brezit të ri</p>
                         </div>
                     </div>
-                    <p class="footer-description">Platforma e parë shqiptare për ndjekjen dhe analizën e tregut të kriptomonedhave.</p>
+                    <p class="footer-description">Platforma e parë shqiptare për ndjekjen dhe analizën e tregut të kriptomonedhave me localStorage.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -535,11 +542,11 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2024 Poga Finance. Të gjitha të drejtat e rezervuara. Krijuar me pasion nga <strong>Emin Poga</strong>.</p>
+                <p>&copy; 2024 Poga Finance. Të gjitha të drejtat e rezervuara. Krijuar me pasion nga <strong>Emin Poga</strong>. | <span id="storage-info">Të dhënat ruhen lokalmente</span></p>
                 <div class="footer-badges">
                     <span class="badge"><i class="fas fa-lock"></i> SSL i Sigurt</span>
                     <span class="badge"><i class="fas fa-globe"></i> Në Gjuhën Shqipe</span>
-                    <span class="badge"><i class="fas fa-bolt"></i> Shpejtësi e Lartë</span>
+                    <span class="badge"><i class="fas fa-database"></i> localStorage</span>
                 </div>
             </div>
         </div>
@@ -647,7 +654,7 @@
                 </div>
                 <div class="form-group">
                     <label>Shuma për Tërheqje ($):</label>
-                    <input type="number" id="withdraw-amount" placeholder="0.00" step="0.01" min="20" max="3150.45">
+                    <input type="number" id="withdraw-amount" placeholder="0.00" step="0.01" min="20">
                     <small class="hint">Minimumi: $20</small>
                 </div>
                 <div class="form-group">
@@ -674,7 +681,37 @@
         </div>
     </div>
     
-    <script src="script.js"></script>
+    <div class="modal" id="export-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Eksporto Të Dhënat</h3>
+                <button class="modal-close export-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Formati i Eksportit:</label>
+                    <select id="export-format">
+                        <option value="json">JSON</option>
+                        <option value="csv">CSV</option>
+                        <option value="txt">Text</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Përmbajtja:</label>
+                    <textarea id="export-data" rows="10" readonly></textarea>
+                </div>
+                <div class="export-actions">
+                    <button class="btn btn-outline" id="copy-data-btn">
+                        <i class="fas fa-copy"></i> Kopjo
+                    </button>
+                    <button class="btn btn-primary" id="download-data-btn">
+                        <i class="fas fa-download"></i> Shkarko
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="crypto.js"></script>
 </body>
-
 </html>
