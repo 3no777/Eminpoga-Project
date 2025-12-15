@@ -178,6 +178,11 @@ header {
     justify-content: center;
 }
 
+.btn-small {
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
 .theme-toggle {
     width: 48px;
     height: 48px;
@@ -370,6 +375,12 @@ header {
     height: 100px;
     border-radius: 10px;
     background: rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.card-chart canvas {
+    width: 100% !important;
+    height: 100% !important;
 }
 
 .market-overview {
@@ -620,6 +631,12 @@ header {
     height: 300px;
     border-radius: 10px;
     background: rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.portfolio-chart canvas {
+    width: 100% !important;
+    height: 100% !important;
 }
 
 .wallet-section {
@@ -656,11 +673,6 @@ header {
 .wallet-actions {
     display: flex;
     gap: 10px;
-}
-
-.btn-small {
-    padding: 8px 16px;
-    font-size: 14px;
 }
 
 .wallet-balance {
@@ -863,6 +875,36 @@ header {
     display: flex;
     flex-direction: column;
     gap: 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #cbd5e1;
+}
+
+.form-group select,
+.form-group input {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.form-group select:focus,
+.form-group input:focus {
+    outline: none;
+    border-color: #29c4ff;
+    background: rgba(41, 196, 255, 0.05);
 }
 
 .input-with-buttons {
@@ -1089,6 +1131,20 @@ header {
     gap: 5px;
 }
 
+.read-more {
+    color: #29c4ff;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s ease;
+}
+
+.read-more:hover {
+    color: #a855f7;
+}
+
 .features-section {
     padding: 80px 0;
 }
@@ -1233,6 +1289,11 @@ footer {
     font-size: 14px;
 }
 
+#storage-info {
+    color: #29c4ff;
+    font-weight: 600;
+}
+
 .footer-badges {
     display: flex;
     gap: 15px;
@@ -1303,6 +1364,8 @@ footer {
     border: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(20px);
     overflow: hidden;
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 .modal-header {
@@ -1333,36 +1396,6 @@ footer {
 
 .modal-body {
     padding: 30px;
-}
-
-.form-group {
-    margin-bottom: 25px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: 500;
-    color: #cbd5e1;
-}
-
-.form-group select,
-.form-group input {
-    width: 100%;
-    padding: 12px 16px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    color: white;
-    font-size: 16px;
-    transition: all 0.3s ease;
-}
-
-.form-group select:focus,
-.form-group input:focus {
-    outline: none;
-    border-color: #29c4ff;
-    background: rgba(41, 196, 255, 0.05);
 }
 
 .modal-footer {
@@ -1440,6 +1473,49 @@ footer {
     font-size: 12px;
 }
 
+#export-data {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 12px;
+    color: white;
+    font-family: monospace;
+    font-size: 12px;
+    resize: vertical;
+}
+
+.export-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.particles-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.particle {
+    position: absolute;
+    border-radius: 50%;
+}
+
+.mini-chart {
+    width: 100px;
+    height: 40px;
+}
+
 @keyframes float {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
@@ -1470,6 +1546,18 @@ footer {
 @media (max-width: 992px) {
     .nav-links {
         display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(10, 14, 23, 0.95);
+        flex-direction: column;
+        padding: 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    }
+    
+    .nav-links.show {
+        display: flex;
     }
     
     .mobile-menu-btn {
@@ -1547,6 +1635,15 @@ footer {
     .deposit-methods {
         grid-template-columns: repeat(2, 1fr);
     }
+    
+    .user-actions {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+    
+    .footer-links {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 576px) {
@@ -1562,20 +1659,6 @@ footer {
         font-size: 32px;
     }
     
-    .user-actions .btn {
-        padding: 10px 16px;
-        font-size: 14px;
-    }
-    
-    .footer-links {
-        grid-template-columns: 1fr;
-    }
-    
-    .footer-bottom {
-        flex-direction: column;
-        text-align: center;
-    }
-    
     .balance-amount {
         font-size: 32px;
     }
@@ -1586,5 +1669,14 @@ footer {
     
     .amount-btn {
         flex: 0 0 calc(50% - 4px);
+    }
+    
+    .portfolio-value {
+        font-size: 32px;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
     }
 }
